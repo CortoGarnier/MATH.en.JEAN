@@ -5,7 +5,8 @@ A = theorem_DF_HL()
 print("\n")
 print("brassage des cartes")
 print("\n")
-# if you don't want use comb_aleatoire() you could create a dictionary : {'Alice': [...], 'Bob': [...], 'Charlie':[...]}
+# if you don't want use comb_aleatoire() you could create a dictionary :
+# {'Alice': [...], 'Bob': [...], 'Charlie':[...]}
 B = comb_aleatoire()
 C = B['Alice']
 # The Alice's cards :
