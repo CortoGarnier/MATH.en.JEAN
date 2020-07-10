@@ -1,11 +1,12 @@
 def theorem_DF_HL(B=int(input("choisissez le nombre B:")), n=int(input("choisissez le nombre n:"))):
     '''
-This function allows to answer the first question with the theorem of Diffie-Hellman.
+This function allows to answer the first question with the theorem of
+Diffie-Hellman.
     :param B: first public number
     :param n: second public number
     :return: the key
     '''
-    tour =0
+    tour = 0
     while tour < 1:
         # definition of secret number of Alice
         nbr_secretAL = input("Alice choisit un nombre: ")
@@ -19,7 +20,8 @@ This function allows to answer the first question with the theorem of Diffie-Hel
         first_resultBOB = B ** int(nbr_secretBOB) % n
         # result of Bob
         print("Le resultat du calcule de Bob est {0}.".format(first_resultBOB))
-        # if one of the results is equal to 1, the key is equal to 1 and Charlie know the key
+        # if one of the results is equal to 1,
+        # the key is equal to 1 and Charlie know the key
         if first_resultAL == 0 or 1:
             tour = 0
             print("\n")
@@ -36,9 +38,9 @@ This function allows to answer the first question with the theorem of Diffie-Hel
     while tours < 2:
         if tours == 0:
             # recovery of the result of Bob
-            nbr_secret_partner= input("Alice entre le premier résultat de Bob: ")
+            nbr_secret_partner = input("Alice entre le premier résultat de Bob: ")
             # finale calculation with the result of the partner
-            final_resultAL = int(nbr_secret_partner) ** int(nbr_secretAL)%n
+            final_resultAL = int(nbr_secret_partner) ** int(nbr_secretAL) % n
             # finale result : The Key
             print("La clé trouver par Alice est {0}.".format(final_resultAL))
         elif tours == 1:
@@ -78,16 +80,19 @@ This function distribute the cards randomly.
     return {"Alice": comb_1, "Bob": comb_2, "Charlie": comb_3}
 
 
-def BobCalcul(Result=8, BobL = [4, 1, 3]):
+def BobCalcul(Result=8, BobL=[4, 1, 3]):
     '''
-    This function find the cards of Alice the cards of Bob and the adding cards of Alice.
+    This function find the cards of Alice the cards of Bob and the adding
+    cards of Alice.
     :param Result:Adding card of Alice
     :param BobL:Cards of Bob
     :return:Cards of Alice
     '''
     # We remove the cards of Bob of possibilities
     liste = [0, 1, 2, 3, 4, 5, 6]
-    R1 = BobL[0]; R2 = BobL[1]; R3 = BobL[2]
+    R1 = BobL[0]
+    R2 = BobL[1]
+    R3 = BobL[2]
     liste.remove(R1)
     liste.remove(R2)
     liste.remove(R3)
@@ -101,7 +106,8 @@ def BobCalcul(Result=8, BobL = [4, 1, 3]):
     for i in nbrtour:
         for j in nbrtour2:
             for k in nbrtour3:
-                # ... with a loop for which create combination with the what Bob doesn't have
+                # ... with a loop for which create combination
+                # with the cards what Bob doesn't have
                 liste = list(LIST_INV)
                 a = liste.pop(int(i))
                 b = liste.pop(int(j))
